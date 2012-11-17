@@ -21,6 +21,9 @@
 		850FD3571657CB270095DC7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD3381657CB260095DC7C /* Foundation.framework */; };
 		850FD35F1657CB270095DC7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 850FD35D1657CB270095DC7C /* InfoPlist.strings */; };
 		850FD3621657CB270095DC7C /* SciParkShuttleBusGoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3611657CB270095DC7C /* SciParkShuttleBusGoTests.m */; };
+		850FD36C1657CBCC0095DC7C /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850FD36B1657CBCC0095DC7C /* Storyboard_iPhone.storyboard */; };
+		850FD36E1657CC2B0095DC7C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD36D1657CC2B0095DC7C /* MapKit.framework */; };
+		850FD3711657CCA50095DC7C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3701657CCA50095DC7C /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		850FD35E1657CB270095DC7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		850FD3601657CB270095DC7C /* SciParkShuttleBusGoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SciParkShuttleBusGoTests.h; sourceTree = "<group>"; };
 		850FD3611657CB270095DC7C /* SciParkShuttleBusGoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SciParkShuttleBusGoTests.m; sourceTree = "<group>"; };
+		850FD36B1657CBCC0095DC7C /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		850FD36D1657CC2B0095DC7C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		850FD36F1657CCA50095DC7C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		850FD3701657CCA50095DC7C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850FD36E1657CC2B0095DC7C /* MapKit.framework in Frameworks */,
 				850FD3371657CB260095DC7C /* UIKit.framework in Frameworks */,
 				850FD3391657CB260095DC7C /* Foundation.framework in Frameworks */,
 				850FD33B1657CB260095DC7C /* CoreGraphics.framework in Frameworks */,
@@ -101,6 +109,7 @@
 		850FD3351657CB260095DC7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				850FD36D1657CC2B0095DC7C /* MapKit.framework */,
 				850FD3361657CB260095DC7C /* UIKit.framework */,
 				850FD3381657CB260095DC7C /* Foundation.framework */,
 				850FD33A1657CB260095DC7C /* CoreGraphics.framework */,
@@ -114,7 +123,10 @@
 			children = (
 				850FD3451657CB260095DC7C /* AppDelegate.h */,
 				850FD3461657CB260095DC7C /* AppDelegate.m */,
+				850FD36B1657CBCC0095DC7C /* Storyboard_iPhone.storyboard */,
 				850FD33D1657CB260095DC7C /* Supporting Files */,
+				850FD36F1657CCA50095DC7C /* MapViewController.h */,
+				850FD3701657CCA50095DC7C /* MapViewController.m */,
 			);
 			path = SciParkShuttleBusGo;
 			sourceTree = "<group>";
@@ -227,6 +239,7 @@
 				850FD3491657CB260095DC7C /* Default.png in Resources */,
 				850FD34B1657CB260095DC7C /* Default@2x.png in Resources */,
 				850FD34D1657CB260095DC7C /* Default-568h@2x.png in Resources */,
+				850FD36C1657CBCC0095DC7C /* Storyboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +276,7 @@
 			files = (
 				850FD3431657CB260095DC7C /* main.m in Sources */,
 				850FD3471657CB260095DC7C /* AppDelegate.m in Sources */,
+				850FD3711657CCA50095DC7C /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +372,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
 				INFOPLIST_FILE = "SciParkShuttleBusGo/SciParkShuttleBusGo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -369,6 +384,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
 				INFOPLIST_FILE = "SciParkShuttleBusGo/SciParkShuttleBusGo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
