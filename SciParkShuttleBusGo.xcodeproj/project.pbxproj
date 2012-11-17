@@ -24,6 +24,8 @@
 		850FD36C1657CBCC0095DC7C /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850FD36B1657CBCC0095DC7C /* Storyboard_iPhone.storyboard */; };
 		850FD36E1657CC2B0095DC7C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD36D1657CC2B0095DC7C /* MapKit.framework */; };
 		850FD3711657CCA50095DC7C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3701657CCA50095DC7C /* MapViewController.m */; };
+		850FD3751657D4F70095DC7C /* BusMarkAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3741657D4F70095DC7C /* BusMarkAnnotation.m */; };
+		850FD3781657D56E0095DC7C /* BusMarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3771657D56E0095DC7C /* BusMarkView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		850FD36D1657CC2B0095DC7C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		850FD36F1657CCA50095DC7C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		850FD3701657CCA50095DC7C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		850FD3731657D4F70095DC7C /* BusMarkAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusMarkAnnotation.h; sourceTree = "<group>"; };
+		850FD3741657D4F70095DC7C /* BusMarkAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusMarkAnnotation.m; sourceTree = "<group>"; };
+		850FD3761657D56E0095DC7C /* BusMarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusMarkView.h; sourceTree = "<group>"; };
+		850FD3771657D56E0095DC7C /* BusMarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusMarkView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +131,7 @@
 				850FD3461657CB260095DC7C /* AppDelegate.m */,
 				850FD36B1657CBCC0095DC7C /* Storyboard_iPhone.storyboard */,
 				850FD33D1657CB260095DC7C /* Supporting Files */,
-				850FD36F1657CCA50095DC7C /* MapViewController.h */,
-				850FD3701657CCA50095DC7C /* MapViewController.m */,
+				850FD3721657D4BB0095DC7C /* MapView */,
 			);
 			path = SciParkShuttleBusGo;
 			sourceTree = "<group>";
@@ -162,6 +167,19 @@
 				850FD35D1657CB270095DC7C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		850FD3721657D4BB0095DC7C /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				850FD36F1657CCA50095DC7C /* MapViewController.h */,
+				850FD3701657CCA50095DC7C /* MapViewController.m */,
+				850FD3731657D4F70095DC7C /* BusMarkAnnotation.h */,
+				850FD3741657D4F70095DC7C /* BusMarkAnnotation.m */,
+				850FD3761657D56E0095DC7C /* BusMarkView.h */,
+				850FD3771657D56E0095DC7C /* BusMarkView.m */,
+			);
+			name = MapView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +295,8 @@
 				850FD3431657CB260095DC7C /* main.m in Sources */,
 				850FD3471657CB260095DC7C /* AppDelegate.m in Sources */,
 				850FD3711657CCA50095DC7C /* MapViewController.m in Sources */,
+				850FD3751657D4F70095DC7C /* BusMarkAnnotation.m in Sources */,
+				850FD3781657D56E0095DC7C /* BusMarkView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

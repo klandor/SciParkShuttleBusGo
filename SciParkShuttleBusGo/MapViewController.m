@@ -7,8 +7,8 @@
 //
 
 #import "MapViewController.h"
-//#import "MapViewAnnotation.h"
-//#import "BusMarkView.h"
+#import "BusMarkAnnotation.h"
+#import "BusMarkView.h"
 
 @interface MapViewController ()
 
@@ -18,7 +18,6 @@
 
 @synthesize map;
 
-int direction = 0;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,11 +51,11 @@ int direction = 0;
 	location.longitude = (double) 120.995390;
     
 	// Add the annotation to our map view
-//	MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:@"Buckingham Palace" andCoordinate:location];
-//    newAnnotation.direction = direction;
-//	[self.map addAnnotation:newAnnotation];
-//    direction += 90;
-//    [newAnnotation release];
+	BusMarkAnnotation *newAnnotation = [[BusMarkAnnotation alloc] initWithTitle:@"Buckingham Palace" andCoordinate:location];
+    newAnnotation.direction = 75;
+    newAnnotation.colorCode = 5;
+	[self.map addAnnotation:newAnnotation];
+    [newAnnotation release];
 	
     
 	// Do any additional setup after loading the view.
@@ -102,22 +101,22 @@ int direction = 0;
 //}
 
 
-//- (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation: (id <MKAnnotation>) annotation
-//{
-//    BusMarkView *bus = [mapView dequeueReusableAnnotationViewWithIdentifier:@"bus"];
-//    if(bus == nil){
-//        bus = [[[BusMarkView alloc] initWithAnnotation:annotation reuseIdentifier:@"bus"] autorelease];
-//    }
-//    
-//    if ([annotation respondsToSelector:@selector(passInfoToBus:)]) {
-//        NSLog(@"passInfoToBus");
-//        [annotation passInfoToBus:bus];
-//    }
-//    
-//    // redraw the view
-//    [bus setNeedsDisplay];
-//    return bus;
-//}
+- (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation: (id <MKAnnotation>) annotation
+{
+    MKAnnotationView *bus = [mapView dequeueReusableAnnotationViewWithIdentifier:@"BusMark"];
+    if(bus == nil){
+        bus = [[[BusMarkView alloc] initWithAnnotation:annotation reuseIdentifier:@"BusMark"] autorelease];
+    }
+    
+    // pass information
+    if ([annotation respondsToSelector:@selector(passInfoToBus:)]) {
+        [annotation performSelector:@selector(passInfoToBus:) withObject:bus];
+    }
+    
+    // redraw the view
+    [bus setNeedsDisplay];
+    return bus;
+}
 
 
 - (void)didReceiveMemoryWarning
