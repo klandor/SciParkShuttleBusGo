@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		850FD3371657CB260095DC7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD3361657CB260095DC7C /* UIKit.framework */; };
+		850FD3391657CB260095DC7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD3381657CB260095DC7C /* Foundation.framework */; };
+		850FD33B1657CB260095DC7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD33A1657CB260095DC7C /* CoreGraphics.framework */; };
+		850FD3411657CB260095DC7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 850FD33F1657CB260095DC7C /* InfoPlist.strings */; };
+		850FD3431657CB260095DC7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3421657CB260095DC7C /* main.m */; };
+		850FD3471657CB260095DC7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3461657CB260095DC7C /* AppDelegate.m */; };
+		850FD3491657CB260095DC7C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 850FD3481657CB260095DC7C /* Default.png */; };
+		850FD34B1657CB260095DC7C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 850FD34A1657CB260095DC7C /* Default@2x.png */; };
+		850FD34D1657CB260095DC7C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 850FD34C1657CB260095DC7C /* Default-568h@2x.png */; };
+		850FD3551657CB270095DC7C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD3541657CB270095DC7C /* SenTestingKit.framework */; };
+		850FD3561657CB270095DC7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD3361657CB260095DC7C /* UIKit.framework */; };
+		850FD3571657CB270095DC7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850FD3381657CB260095DC7C /* Foundation.framework */; };
+		850FD35F1657CB270095DC7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 850FD35D1657CB270095DC7C /* InfoPlist.strings */; };
+		850FD3621657CB270095DC7C /* SciParkShuttleBusGoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3611657CB270095DC7C /* SciParkShuttleBusGoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		850FD3581657CB270095DC7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 850FD3291657CB250095DC7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 850FD3311657CB260095DC7C;
+			remoteInfo = SciParkShuttleBusGo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		850FD3321657CB260095DC7C /* SciParkShuttleBusGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SciParkShuttleBusGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		850FD3361657CB260095DC7C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		850FD3381657CB260095DC7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		850FD33A1657CB260095DC7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		850FD33E1657CB260095DC7C /* SciParkShuttleBusGo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SciParkShuttleBusGo-Info.plist"; sourceTree = "<group>"; };
+		850FD3401657CB260095DC7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		850FD3421657CB260095DC7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		850FD3441657CB260095DC7C /* SciParkShuttleBusGo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SciParkShuttleBusGo-Prefix.pch"; sourceTree = "<group>"; };
+		850FD3451657CB260095DC7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		850FD3461657CB260095DC7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		850FD3481657CB260095DC7C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		850FD34A1657CB260095DC7C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		850FD34C1657CB260095DC7C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		850FD3531657CB270095DC7C /* SciParkShuttleBusGoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SciParkShuttleBusGoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		850FD3541657CB270095DC7C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		850FD35C1657CB270095DC7C /* SciParkShuttleBusGoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SciParkShuttleBusGoTests-Info.plist"; sourceTree = "<group>"; };
+		850FD35E1657CB270095DC7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		850FD3601657CB270095DC7C /* SciParkShuttleBusGoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SciParkShuttleBusGoTests.h; sourceTree = "<group>"; };
+		850FD3611657CB270095DC7C /* SciParkShuttleBusGoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SciParkShuttleBusGoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		850FD32F1657CB260095DC7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850FD3371657CB260095DC7C /* UIKit.framework in Frameworks */,
+				850FD3391657CB260095DC7C /* Foundation.framework in Frameworks */,
+				850FD33B1657CB260095DC7C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		850FD34F1657CB270095DC7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850FD3551657CB270095DC7C /* SenTestingKit.framework in Frameworks */,
+				850FD3561657CB270095DC7C /* UIKit.framework in Frameworks */,
+				850FD3571657CB270095DC7C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		850FD3271657CB250095DC7C = {
+			isa = PBXGroup;
+			children = (
+				850FD33C1657CB260095DC7C /* SciParkShuttleBusGo */,
+				850FD35A1657CB270095DC7C /* SciParkShuttleBusGoTests */,
+				850FD3351657CB260095DC7C /* Frameworks */,
+				850FD3331657CB260095DC7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		850FD3331657CB260095DC7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				850FD3321657CB260095DC7C /* SciParkShuttleBusGo.app */,
+				850FD3531657CB270095DC7C /* SciParkShuttleBusGoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		850FD3351657CB260095DC7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				850FD3361657CB260095DC7C /* UIKit.framework */,
+				850FD3381657CB260095DC7C /* Foundation.framework */,
+				850FD33A1657CB260095DC7C /* CoreGraphics.framework */,
+				850FD3541657CB270095DC7C /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		850FD33C1657CB260095DC7C /* SciParkShuttleBusGo */ = {
+			isa = PBXGroup;
+			children = (
+				850FD3451657CB260095DC7C /* AppDelegate.h */,
+				850FD3461657CB260095DC7C /* AppDelegate.m */,
+				850FD33D1657CB260095DC7C /* Supporting Files */,
+			);
+			path = SciParkShuttleBusGo;
+			sourceTree = "<group>";
+		};
+		850FD33D1657CB260095DC7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				850FD33E1657CB260095DC7C /* SciParkShuttleBusGo-Info.plist */,
+				850FD33F1657CB260095DC7C /* InfoPlist.strings */,
+				850FD3421657CB260095DC7C /* main.m */,
+				850FD3441657CB260095DC7C /* SciParkShuttleBusGo-Prefix.pch */,
+				850FD3481657CB260095DC7C /* Default.png */,
+				850FD34A1657CB260095DC7C /* Default@2x.png */,
+				850FD34C1657CB260095DC7C /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		850FD35A1657CB270095DC7C /* SciParkShuttleBusGoTests */ = {
+			isa = PBXGroup;
+			children = (
+				850FD3601657CB270095DC7C /* SciParkShuttleBusGoTests.h */,
+				850FD3611657CB270095DC7C /* SciParkShuttleBusGoTests.m */,
+				850FD35B1657CB270095DC7C /* Supporting Files */,
+			);
+			path = SciParkShuttleBusGoTests;
+			sourceTree = "<group>";
+		};
+		850FD35B1657CB270095DC7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				850FD35C1657CB270095DC7C /* SciParkShuttleBusGoTests-Info.plist */,
+				850FD35D1657CB270095DC7C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		850FD3311657CB260095DC7C /* SciParkShuttleBusGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 850FD3651657CB270095DC7C /* Build configuration list for PBXNativeTarget "SciParkShuttleBusGo" */;
+			buildPhases = (
+				850FD32E1657CB260095DC7C /* Sources */,
+				850FD32F1657CB260095DC7C /* Frameworks */,
+				850FD3301657CB260095DC7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SciParkShuttleBusGo;
+			productName = SciParkShuttleBusGo;
+			productReference = 850FD3321657CB260095DC7C /* SciParkShuttleBusGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		850FD3521657CB270095DC7C /* SciParkShuttleBusGoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 850FD3681657CB270095DC7C /* Build configuration list for PBXNativeTarget "SciParkShuttleBusGoTests" */;
+			buildPhases = (
+				850FD34E1657CB270095DC7C /* Sources */,
+				850FD34F1657CB270095DC7C /* Frameworks */,
+				850FD3501657CB270095DC7C /* Resources */,
+				850FD3511657CB270095DC7C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				850FD3591657CB270095DC7C /* PBXTargetDependency */,
+			);
+			name = SciParkShuttleBusGoTests;
+			productName = SciParkShuttleBusGoTests;
+			productReference = 850FD3531657CB270095DC7C /* SciParkShuttleBusGoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		850FD3291657CB250095DC7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = klandor;
+			};
+			buildConfigurationList = 850FD32C1657CB250095DC7C /* Build configuration list for PBXProject "SciParkShuttleBusGo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 850FD3271657CB250095DC7C;
+			productRefGroup = 850FD3331657CB260095DC7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				850FD3311657CB260095DC7C /* SciParkShuttleBusGo */,
+				850FD3521657CB270095DC7C /* SciParkShuttleBusGoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		850FD3301657CB260095DC7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850FD3411657CB260095DC7C /* InfoPlist.strings in Resources */,
+				850FD3491657CB260095DC7C /* Default.png in Resources */,
+				850FD34B1657CB260095DC7C /* Default@2x.png in Resources */,
+				850FD34D1657CB260095DC7C /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		850FD3501657CB270095DC7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850FD35F1657CB270095DC7C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		850FD3511657CB270095DC7C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		850FD32E1657CB260095DC7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850FD3431657CB260095DC7C /* main.m in Sources */,
+				850FD3471657CB260095DC7C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		850FD34E1657CB270095DC7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850FD3621657CB270095DC7C /* SciParkShuttleBusGoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		850FD3591657CB270095DC7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 850FD3311657CB260095DC7C /* SciParkShuttleBusGo */;
+			targetProxy = 850FD3581657CB270095DC7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		850FD33F1657CB260095DC7C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				850FD3401657CB260095DC7C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		850FD35D1657CB270095DC7C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				850FD35E1657CB270095DC7C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		850FD3631657CB270095DC7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		850FD3641657CB270095DC7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		850FD3661657CB270095DC7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
+				INFOPLIST_FILE = "SciParkShuttleBusGo/SciParkShuttleBusGo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		850FD3671657CB270095DC7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
+				INFOPLIST_FILE = "SciParkShuttleBusGo/SciParkShuttleBusGo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		850FD3691657CB270095DC7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SciParkShuttleBusGo.app/SciParkShuttleBusGo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
+				INFOPLIST_FILE = "SciParkShuttleBusGoTests/SciParkShuttleBusGoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		850FD36A1657CB270095DC7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SciParkShuttleBusGo.app/SciParkShuttleBusGo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
+				INFOPLIST_FILE = "SciParkShuttleBusGoTests/SciParkShuttleBusGoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		850FD32C1657CB250095DC7C /* Build configuration list for PBXProject "SciParkShuttleBusGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				850FD3631657CB270095DC7C /* Debug */,
+				850FD3641657CB270095DC7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		850FD3651657CB270095DC7C /* Build configuration list for PBXNativeTarget "SciParkShuttleBusGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				850FD3661657CB270095DC7C /* Debug */,
+				850FD3671657CB270095DC7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		850FD3681657CB270095DC7C /* Build configuration list for PBXNativeTarget "SciParkShuttleBusGoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				850FD3691657CB270095DC7C /* Debug */,
+				850FD36A1657CB270095DC7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 850FD3291657CB250095DC7C /* Project object */;
+}
