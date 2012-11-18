@@ -17,16 +17,20 @@
                                     <outlet property="delegate" destination="dD7-7R-AE2" id="fN3-rI-7ix"/>
                                 </connections>
                             </mapView>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x0i-Tf-eoI"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="x0i-Tf-eoI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="95W-ZB-8XD"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="trailing" secondItem="Mnx-WA-mU1" secondAttribute="trailing" type="default" id="GBT-cW-rr9"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="bottom" secondItem="Mnx-WA-mU1" secondAttribute="bottom" type="default" id="VXd-fm-m23"/>
+                            <constraint firstItem="x0i-Tf-eoI" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="atX-U5-05v"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" type="default" id="q40-AI-5aG"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="leading" secondItem="Mnx-WA-mU1" secondAttribute="leading" type="default" id="yBj-75-wS3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingMark" destination="x0i-Tf-eoI" id="OXD-No-fcp"/>
                         <outlet property="map" destination="m0R-bs-vXB" id="jUt-pT-tz2"/>
                     </connections>
                 </viewController>
@@ -35,6 +39,18 @@
             <point key="canvasLocation" x="93" y="-19"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loadingMark" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

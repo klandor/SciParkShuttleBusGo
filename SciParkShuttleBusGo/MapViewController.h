@@ -16,4 +16,5 @@
 
 @property (nonatomic, retain) IBOutlet MKMapView *map;
 @property (nonatomic, retain) NSTimer *timer;
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *loadingMark;
 @end

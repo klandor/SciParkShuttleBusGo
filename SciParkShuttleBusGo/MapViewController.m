@@ -31,15 +31,16 @@
 
 - (void)dealloc
 {
-    //    [reverseGeocoder release];
     [map release];
-    //    [getAddressButton release];
-    
+    [_loadingMark release];
+    [timer invalidate];
+    [timer release];
     [super dealloc];
 }
 
 - (void)updateBus
 {
+    [self.loadingMark startAnimating];
     NSData *xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://dl.dropbox.com/u/169167/busAzimuth.xml"]];
     //handle network error
     
@@ -68,6 +69,8 @@
             [newAnnotation release];
         }
     }
+    
+    [self.loadingMark stopAnimating];
 }
 
 - (void)removeAllBusMark
@@ -89,6 +92,7 @@
                                            selector: @selector(updateBus)
                                            userInfo: nil
                                             repeats: YES];
+    
 }
 
 - (void)viewDidLoad
@@ -164,5 +168,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setLoadingMark:nil];
+    [super viewDidUnload];
+}
 @end
 
