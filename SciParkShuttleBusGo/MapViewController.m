@@ -41,8 +41,18 @@
 - (void)updateBus
 {
     [self.loadingMark startAnimating];
-    NSData *xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://dl.dropbox.com/u/169167/busAzimuth.xml"]];
-    //handle network error
+    NSData *xmlData;
+    while (true) {
+        // online url: http://117.56.78.38/sipa/busAzimuth.xml
+        // testing url: https://dl.dropbox.com/u/169167/busAzimuth.xml
+        xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://dl.dropbox.com/u/169167/busAzimuth.xml"]];
+        if(xmlData)
+        {
+            break;
+        }
+        NSLog(@"Fetching data failure, retry in 5 sec.");
+        [NSThread sleepForTimeInterval:5];
+    }
     
     //remove all anotation
     [self removeAllBusMark];
