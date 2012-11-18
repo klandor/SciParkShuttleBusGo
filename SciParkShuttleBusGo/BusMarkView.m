@@ -18,7 +18,7 @@
     if (self) {
         // Initialization code
         self.opaque = NO;
-        self.radius = 20;
+        self.radius = 10;
         self.frame = CGRectMake(0,0,self.radius*2.2,self.radius*2.2);
         self.direction = 0;
     }
@@ -31,9 +31,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    NSLog(@"drawRect");
-    
-    self.centerOffset = CGPointMake((sin(direction*M_PI/180))*self.radius/20, -(cos(direction*M_PI/180))*self.radius/20 );
+    self.centerOffset = CGPointMake( -(sin(direction*M_PI/180))*self.radius/10, (cos(direction*M_PI/180))*self.radius/10 );
     
     UIColor *color = [self colorWithHalfAlpha:NO];
     UIColor *colorFill = [self colorWithHalfAlpha:YES];
@@ -69,7 +67,7 @@
     CGContextAddLineToPoint(context, (sin(tmp_dir*M_PI/180) +1.1)*self.radius,(-cos(tmp_dir*M_PI/180) +1.1)*self.radius);
     
     tmp_dir += 40;
-    CGContextAddLineToPoint(context, (sin(tmp_dir*M_PI/180)/4+1.1)*self.radius,(-cos(tmp_dir*M_PI/180)/4+1.1)*self.radius);
+//    CGContextAddLineToPoint(context, (sin(tmp_dir*M_PI/180)/4+1.1)*self.radius,(-cos(tmp_dir*M_PI/180)/4+1.1)*self.radius);
     tmp_dir += 40;
     CGContextAddLineToPoint(context, (sin(tmp_dir*M_PI/180) +1.1)*self.radius,(-cos(tmp_dir*M_PI/180) +1.1)*self.radius);
     
