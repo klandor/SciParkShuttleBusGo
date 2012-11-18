@@ -15,4 +15,5 @@
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView *map;
+@property (nonatomic, retain) NSTimer *timer;
 @end

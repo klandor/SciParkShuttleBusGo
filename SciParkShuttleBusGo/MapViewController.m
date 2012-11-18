@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "BusMarkAnnotation.h"
 #import "BusMarkView.h"
+#import "GDataXMLNode.h"
 
 @interface MapViewController ()
 
@@ -16,7 +17,7 @@
 
 @implementation MapViewController
 
-@synthesize map;
+@synthesize map, timer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +25,7 @@
     if (self) {
         // Custom initialization
     }
+    NSLog(@"MapViewController init");
     return self;
 }
 
@@ -36,12 +38,65 @@
     [super dealloc];
 }
 
+- (void)updateBus
+{
+    NSData *xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://dl.dropbox.com/u/169167/busAzimuth.xml"]];
+    //handle network error
+    
+    //remove all anotation
+    [self removeAllBusMark];
+    
+    //
+    NSError *error;
+    GDataXMLDocument *xml = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+    NSArray *buses = [xml.rootElement children];
+    NSEnumerator *e = [buses objectEnumerator];
+    GDataXMLElement *bus;
+    while(bus = [e nextObject])
+    {
+        if ([[[bus attributeForName:@"OnOff"].stringValue uppercaseString] isEqualToString:@"ON"])
+        {
+            NSLog(@"BUS %@", [bus attributeForName:@"LP"].stringValue);
+            CLLocationCoordinate2D location;
+            location.latitude = [[bus attributeForName:@"Lat"].stringValue doubleValue];
+            location.longitude = [[bus attributeForName:@"Lng"].stringValue doubleValue];
+            
+            BusMarkAnnotation *newAnnotation = [[BusMarkAnnotation alloc] initWithTitle:[bus attributeForName:@"LP"].stringValue andCoordinate:location];
+            newAnnotation.direction = [[bus attributeForName:@"Azimuth"].stringValue doubleValue];
+            newAnnotation.colorCode = [[bus attributeForName:@"ColorId"].stringValue intValue];
+            [self.map addAnnotation:newAnnotation];
+            [newAnnotation release];
+        }
+    }
+}
 
+- (void)removeAllBusMark
+{
+    NSEnumerator *e = [map.annotations objectEnumerator];
+    id annotation;
+    while (annotation = [e nextObject]) {
+        if ([annotation isKindOfClass:[BusMarkAnnotation class]]) {
+            [map removeAnnotation:annotation];
+        }
+    }
+
+}
+
+- (void)setupTimer
+{
+    timer = [NSTimer scheduledTimerWithTimeInterval: 5
+                                             target: self
+                                           selector: @selector(updateBus)
+                                           userInfo: nil
+                                            repeats: YES];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    [self setupTimer];
+   
     //mapView.userTrackingMode = MKUserTrackingModeFollow;
     map.showsUserLocation = YES;
     
@@ -51,71 +106,55 @@
 	location.longitude = (double) 120.995390;
     
 	// Add the annotation to our map view
-	BusMarkAnnotation *newAnnotation = [[BusMarkAnnotation alloc] initWithTitle:@"Buckingham Palace" andCoordinate:location];
-    newAnnotation.direction = 75;
-    newAnnotation.colorCode = 5;
-	[self.map addAnnotation:newAnnotation];
-    [newAnnotation release];
+//	BusMarkAnnotation *newAnnotation = [[BusMarkAnnotation alloc] initWithTitle:@"Buckingham Palace" andCoordinate:location];
+//    newAnnotation.direction = 75;
+//    newAnnotation.colorCode = 1;
+//	[self.map addAnnotation:newAnnotation];
+//    [newAnnotation release];
 	
     
 	// Do any additional setup after loading the view.
     MKCoordinateRegion region;
-    region.center.latitude = 24.789481;
-    region.center.longitude = 120.995390;
+    region.center.latitude = 24.782065;
+    region.center.longitude = 121.004524;
     MKCoordinateSpan span;
-    span.latitudeDelta = .002;
-    span.longitudeDelta = .002;
+    span.latitudeDelta = .05;
+    span.longitudeDelta = .05;
     region.span = span;
     [map setRegion:region animated:YES];
 }
 
-//- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-//    //NSLog(@"Lat: %f, Lon: %f", mapView.region.center.latitude, mapView.region.center.longitude);
-//    NSEnumerator *e = [mapView.annotations objectEnumerator];
-//    id object;
-//    while (object = [e nextObject]) {
-//        [mapView removeAnnotation:object];
-//        NSLog(@"annotation removed");
-//    }
-//    
-//    // Set some coordinates for our position (Buckingham Palace!)
-//	CLLocationCoordinate2D location;
-//	location.latitude = (double) 24.789481;
-//	location.longitude = (double) 120.995391;
-//    
-//	// Add the annotation to our map view
-//	MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc]
-//                                        initWithTitle:@"Bus"
-//                                        andCoordinate:location];
-//    newAnnotation.direction = direction;
-//	[mapView addAnnotation:newAnnotation];
-//    [newAnnotation release];
-//    
-//    direction += 90;
-//    if(direction >= 360)
-//    {
-//        direction = 0;
-//    }
-//    
-//    //[mapView setCenterCoordinate:mapView.region.center animated:NO];
-//}
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    NSLog(@"Lat: %f, Lon: %f, delta: (%f,%f)",
+          mapView.region.center.latitude,
+          mapView.region.center.longitude,
+          mapView.region.span.latitudeDelta,
+          mapView.region.span.longitudeDelta);
+    
+}
 
 
 - (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation: (id <MKAnnotation>) annotation
 {
-    MKAnnotationView *bus = [mapView dequeueReusableAnnotationViewWithIdentifier:@"BusMark"];
-    if(bus == nil){
-        bus = [[[BusMarkView alloc] initWithAnnotation:annotation reuseIdentifier:@"BusMark"] autorelease];
-    }
-    
-    // pass information
-    if ([annotation respondsToSelector:@selector(passInfoToBus:)]) {
+    if ([annotation isKindOfClass:[BusMarkAnnotation class]]) {
+        MKAnnotationView *bus = [mapView dequeueReusableAnnotationViewWithIdentifier:annotation.title];
+        if(bus == nil){
+            bus = [[[BusMarkView alloc] initWithAnnotation:annotation reuseIdentifier:annotation.title] autorelease];
+        }
+        
+        // pass information
         [annotation performSelector:@selector(passInfoToBus:) withObject:bus];
+        
+        // redraw the view
+        [bus setNeedsDisplay];
+        
+        return bus;
+    }
+    else
+    {   // use default view
+        return nil;
     }
     
-    // redraw the view
-    [bus setNeedsDisplay];
-    return bus;
 }
 
 
