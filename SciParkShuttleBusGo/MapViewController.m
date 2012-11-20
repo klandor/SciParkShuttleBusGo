@@ -17,7 +17,7 @@
 
 @implementation MapViewController
 
-@synthesize map, timer;
+@synthesize map, timer, noBusLabel, loadingMark;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,20 +32,23 @@
 - (void)dealloc
 {
     [map release];
-    [_loadingMark release];
+    [loadingMark release];
     [timer invalidate];
     [timer release];
+    [noBusLabel release];
     [super dealloc];
 }
 
 - (void)updateBus
 {
-    [self.loadingMark startAnimating];
+    NSLog(@"updateBus fired");
+    //[self.loadingMark startAnimating];
+    
     NSData *xmlData;
     while (true) {
         // online url: http://117.56.78.38/sipa/busAzimuth.xml
         // testing url: https://dl.dropbox.com/u/169167/busAzimuth.xml
-        xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://dl.dropbox.com/u/169167/busAzimuth.xml"]];
+        xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://117.56.78.38/sipa/busAzimuth.xml"]];
         if(xmlData)
         {
             break;
@@ -59,20 +62,26 @@
     
     //
     NSError *error;
-    GDataXMLDocument *xml = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+    GDataXMLDocument *xml = [[[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error] autorelease];
     NSArray *buses = [xml.rootElement children];
     NSEnumerator *e = [buses objectEnumerator];
     GDataXMLElement *bus;
+    BOOL noBus = YES;
     while(bus = [e nextObject])
     {
         if ([[[bus attributeForName:@"OnOff"].stringValue uppercaseString] isEqualToString:@"ON"])
         {
-            NSLog(@"BUS %@", [bus attributeForName:@"LP"].stringValue);
+            noBus = NO;
             CLLocationCoordinate2D location;
             location.latitude = [[bus attributeForName:@"Lat"].stringValue doubleValue];
             location.longitude = [[bus attributeForName:@"Lng"].stringValue doubleValue];
             
-            BusMarkAnnotation *newAnnotation = [[BusMarkAnnotation alloc] initWithTitle:[bus attributeForName:@"LP"].stringValue andCoordinate:location];
+            BusMarkAnnotation *newAnnotation =
+                [[BusMarkAnnotation alloc]
+                 initWithTitle:[NSString stringWithString:[bus attributeForName:@"LP"].stringValue]
+                 andSubtitle:[NSString stringWithFormat:@"%@ km/h", [bus attributeForName:@"Speed"].stringValue]
+                 andCoordinate:location];
+            
             newAnnotation.direction = [[bus attributeForName:@"Azimuth"].stringValue doubleValue];
             newAnnotation.colorCode = [[bus attributeForName:@"ColorId"].stringValue intValue];
             [self.map addAnnotation:newAnnotation];
@@ -81,6 +90,16 @@
     }
     
     [self.loadingMark stopAnimating];
+    self.loadingMark.hidden = YES;
+    noBusLabel.hidden = !noBus;
+}
+
+- (void)fetchAndUpdate
+{
+    self.loadingMark.hidden = NO;
+    [NSThread detachNewThreadSelector: @selector(startAnimating) toTarget:self.loadingMark withObject:nil];
+    [NSThread detachNewThreadSelector: @selector(updateBus) toTarget:self withObject:nil];
+
 }
 
 - (void)removeAllBusMark
@@ -99,7 +118,7 @@
 {
     timer = [NSTimer scheduledTimerWithTimeInterval: 5
                                              target: self
-                                           selector: @selector(updateBus)
+                                           selector: @selector(fetchAndUpdate)
                                            userInfo: nil
                                             repeats: YES];
     
@@ -129,11 +148,11 @@
     
 	// Do any additional setup after loading the view.
     MKCoordinateRegion region;
-    region.center.latitude = 24.782065;
-    region.center.longitude = 121.004524;
+    region.center.latitude = 24.788321;
+    region.center.longitude = 121.004439;
     MKCoordinateSpan span;
-    span.latitudeDelta = .05;
-    span.longitudeDelta = .05;
+    span.latitudeDelta = .046;
+    span.longitudeDelta = .046;
     region.span = span;
     [map setRegion:region animated:YES];
 }
@@ -180,6 +199,7 @@
 
 - (void)viewDidUnload {
     [self setLoadingMark:nil];
+    [self setNoBusLabel:nil];
     [super viewDidUnload];
 }
 @end

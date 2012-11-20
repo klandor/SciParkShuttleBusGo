@@ -17,14 +17,26 @@
                                     <outlet property="delegate" destination="dD7-7R-AE2" id="fN3-rI-7ix"/>
                                 </connections>
                             </mapView>
-                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x0i-Tf-eoI"/>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x0i-Tf-eoI"/>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="所有巴士停止運行中" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUg-DA-kNP">
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" type="user" id="A1c-Fy-O4j"/>
+                                    <constraint firstAttribute="height" constant="20" type="user" id="Nny-EQ-XBh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="x0i-Tf-eoI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="95W-ZB-8XD"/>
-                            <constraint firstItem="m0R-bs-vXB" firstAttribute="trailing" secondItem="Mnx-WA-mU1" secondAttribute="trailing" type="default" id="GBT-cW-rr9"/>
+                            <constraint firstItem="CUg-DA-kNP" firstAttribute="centerX" secondItem="m0R-bs-vXB" secondAttribute="centerX" type="default" id="HOc-9j-KH4"/>
+                            <constraint firstItem="CUg-DA-kNP" firstAttribute="centerX" secondItem="Mnx-WA-mU1" secondAttribute="centerX" type="default" id="Hje-cB-PpD"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="bottom" secondItem="Mnx-WA-mU1" secondAttribute="bottom" type="default" id="VXd-fm-m23"/>
                             <constraint firstItem="x0i-Tf-eoI" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="atX-U5-05v"/>
+                            <constraint firstItem="CUg-DA-kNP" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="hdz-pW-9wK"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" type="default" id="q40-AI-5aG"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="leading" secondItem="Mnx-WA-mU1" secondAttribute="leading" type="default" id="yBj-75-wS3"/>
                         </constraints>
@@ -32,6 +44,7 @@
                     <connections>
                         <outlet property="loadingMark" destination="x0i-Tf-eoI" id="OXD-No-fcp"/>
                         <outlet property="map" destination="m0R-bs-vXB" id="jUt-pT-tz2"/>
+                        <outlet property="noBusLabel" destination="CUg-DA-kNP" id="oGK-Qw-5jI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swj-rk-ibN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,18 +52,6 @@
             <point key="canvasLocation" x="93" y="-19"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loadingMark" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
