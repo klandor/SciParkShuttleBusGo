@@ -11,9 +11,7 @@
 #import "BusMarkView.h"
 
 @interface BusMarkAnnotation : NSObject <MKAnnotation> {
-    
-	NSString *title;
-	CLLocationCoordinate2D coordinate;
+
     
 }
 
@@ -23,7 +21,7 @@
 @property (nonatomic) int colorCode;
 @property (nonatomic) float direction;
 
-- (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d;
+- (id)initWithTitle:(NSString *)title andSubtitle:(NSString *)subtitle  andCoordinate:(CLLocationCoordinate2D)c2d;
 - (void)passInfoToBus:(BusMarkView *) bus;
 
 @end

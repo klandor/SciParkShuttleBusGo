@@ -11,9 +11,12 @@
 @implementation BusMarkAnnotation
 @synthesize title, subtitle, coordinate, colorCode, direction;
 
-- (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d {
+- (id)initWithTitle:(NSString *)ttl andSubtitle:(NSString *)sttl  andCoordinate:(CLLocationCoordinate2D)c2d; {
 	[super init];
 	title = ttl;
+    [title retain];
+    subtitle = sttl;
+    [subtitle retain];
 	coordinate = c2d;
 	return self;
 }
@@ -25,6 +28,7 @@
 
 - (void)dealloc {
 	[title release];
+    [subtitle release];
 	[super dealloc];
 }
 
