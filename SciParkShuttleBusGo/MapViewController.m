@@ -57,6 +57,14 @@
         [NSThread sleepForTimeInterval:5];
     }
     
+    dispatch_async(dispatch_get_main_queue(), ^(){
+        [self updateBusMark:xmlData];
+    });
+    
+
+}
+
+- (void)updateBusMark:(NSData*) xmlData{
     //remove all anotation
     [self removeAllBusMark];
     
@@ -97,8 +105,11 @@
 - (void)fetchAndUpdate
 {
     self.loadingMark.hidden = NO;
-    [NSThread detachNewThreadSelector: @selector(startAnimating) toTarget:self.loadingMark withObject:nil];
-    [NSThread detachNewThreadSelector: @selector(updateBus) toTarget:self withObject:nil];
+    [self.loadingMark startAnimating];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
+        [self updateBus];
+    });
 
 }
 
