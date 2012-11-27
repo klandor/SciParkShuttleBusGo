@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "SettingViewDelegate.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, SettingViewDelegate>
 {
     
 }
-
+- (IBAction)presentSettingView:(id)sender;
 @property (nonatomic, retain) IBOutlet MKMapView *map;
 @property (nonatomic, retain) NSTimer *timer;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *loadingMark;

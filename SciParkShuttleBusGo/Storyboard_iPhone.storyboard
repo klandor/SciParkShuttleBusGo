@@ -28,15 +28,30 @@
                                 <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="sdasd" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fq7-ST-xgd">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentSettingView:" destination="dD7-7R-AE2" eventType="touchUpInside" id="Zdp-lo-4NC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fq7-ST-xgd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="3uk-mU-rF1"/>
                             <constraint firstAttribute="trailing" secondItem="x0i-Tf-eoI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="95W-ZB-8XD"/>
                             <constraint firstItem="CUg-DA-kNP" firstAttribute="centerX" secondItem="m0R-bs-vXB" secondAttribute="centerX" type="default" id="HOc-9j-KH4"/>
                             <constraint firstItem="CUg-DA-kNP" firstAttribute="centerX" secondItem="Mnx-WA-mU1" secondAttribute="centerX" type="default" id="Hje-cB-PpD"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="bottom" secondItem="Mnx-WA-mU1" secondAttribute="bottom" type="default" id="VXd-fm-m23"/>
                             <constraint firstItem="x0i-Tf-eoI" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="atX-U5-05v"/>
                             <constraint firstItem="CUg-DA-kNP" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="hdz-pW-9wK"/>
+                            <constraint firstAttribute="trailing" secondItem="fq7-ST-xgd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ngd-eD-geq"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="top" secondItem="Mnx-WA-mU1" secondAttribute="top" type="default" id="q40-AI-5aG"/>
                             <constraint firstItem="m0R-bs-vXB" firstAttribute="leading" secondItem="Mnx-WA-mU1" secondAttribute="leading" type="default" id="yBj-75-wS3"/>
                         </constraints>
@@ -51,7 +66,76 @@
             </objects>
             <point key="canvasLocation" x="93" y="-19"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="YPz-q3-Sd8">
+            <objects>
+                <viewController storyboardIdentifier="SettingView" id="4rR-B0-Gyh" customClass="SettingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VMH-Aa-4Es">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRi-ed-s3f">
+                                <items>
+                                    <barButtonItem title="Back" id="YzN-9B-aAO">
+                                        <connections>
+                                            <action selector="back:" destination="4rR-B0-Gyh" id="0Em-Ir-ZDf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5cJ-5S-t1T">
+                                <connections>
+                                    <action selector="tabShowCurrentLocation:" destination="4rR-B0-Gyh" eventType="touchUpInside" id="1wl-MW-d6B"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="顯示目前位置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-0X-XnS">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nRi-ed-s3f" firstAttribute="top" secondItem="VMH-Aa-4Es" secondAttribute="top" type="default" id="3hu-pd-gv5"/>
+                            <constraint firstAttribute="trailing" secondItem="5cJ-5S-t1T" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="INe-P3-bce"/>
+                            <constraint firstItem="Pqm-0X-XnS" firstAttribute="centerY" secondItem="5cJ-5S-t1T" secondAttribute="centerY" type="default" id="IWF-8p-U87"/>
+                            <constraint firstItem="5cJ-5S-t1T" firstAttribute="top" secondItem="VMH-Aa-4Es" secondAttribute="top" constant="68" id="TFd-eZ-aR8"/>
+                            <constraint firstItem="nRi-ed-s3f" firstAttribute="leading" secondItem="VMH-Aa-4Es" secondAttribute="leading" type="default" id="c53-fb-4Ym"/>
+                            <constraint firstItem="nRi-ed-s3f" firstAttribute="trailing" secondItem="VMH-Aa-4Es" secondAttribute="trailing" type="default" id="l7e-in-TuO"/>
+                            <constraint firstItem="Pqm-0X-XnS" firstAttribute="leading" secondItem="VMH-Aa-4Es" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="muh-6H-oZy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CurrentLocationSwitch" destination="5cJ-5S-t1T" id="f3g-sm-4Wg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bR6-Cs-HTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550" y="-19"/>
+        </scene>
     </scenes>
+    <classes>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="presentSettingView:"/>
+                <relationship kind="outlet" name="loadingMark" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="noBusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="action" name="tabShowCurrentLocation:"/>
+                <relationship kind="outlet" name="CurrentLocationSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -10,6 +10,7 @@
 #import "BusMarkAnnotation.h"
 #import "BusMarkView.h"
 #import "GDataXMLNode.h"
+#import "SettingViewController.h"
 
 @interface MapViewController ()
 
@@ -113,6 +114,12 @@
 
 }
 
+-(void)finishSettingView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    map.showsUserLocation = [[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUserLocation"];
+}
+
 - (void)removeAllBusMark
 {
     NSEnumerator *e = [map.annotations objectEnumerator];
@@ -142,7 +149,7 @@
     [self setupTimer];
    
     //mapView.userTrackingMode = MKUserTrackingModeFollow;
-    map.showsUserLocation = YES;
+    map.showsUserLocation = [[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUserLocation"];
     
     // Set some coordinates for our position (Buckingham Palace!)
 	CLLocationCoordinate2D location;
@@ -159,11 +166,11 @@
     
 	// Do any additional setup after loading the view.
     MKCoordinateRegion region;
-    region.center.latitude = 24.788321;
-    region.center.longitude = 121.004439;
+    region.center.latitude = 24.781831;
+    region.center.longitude = 121.005138;
     MKCoordinateSpan span;
-    span.latitudeDelta = .046;
-    span.longitudeDelta = .046;
+    span.latitudeDelta = .026;
+    span.longitudeDelta = .026;
     region.span = span;
     [map setRegion:region animated:YES];
 }
@@ -175,6 +182,16 @@
           mapView.region.span.latitudeDelta,
           mapView.region.span.longitudeDelta);
     
+}
+
+- (IBAction)presentSettingView:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle:nil];
+    SettingViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SettingView"];
+    [vc setModalPresentationStyle:UIModalPresentationFullScreen];
+    vc.delegate = self;
+    
+    [self presentModalViewController:vc animated:YES];
 }
 
 
@@ -200,7 +217,6 @@
     }
     
 }
-
 
 - (void)didReceiveMemoryWarning
 {
