@@ -19,6 +19,7 @@
 @implementation MapViewController
 
 @synthesize map, timer, noBusLabel, loadingMark;
+NSDateFormatter *dateFormatter;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +35,6 @@
 {
     [map release];
     [loadingMark release];
-    [timer invalidate];
-    [timer release];
     [noBusLabel release];
     [super dealloc];
 }
@@ -139,12 +138,15 @@
                                            selector: @selector(fetchAndUpdate)
                                            userInfo: nil
                                             repeats: YES];
-    
+    [timer fire];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
 
     [self setupTimer];
    
@@ -227,6 +229,9 @@
 - (void)viewDidUnload {
     [self setLoadingMark:nil];
     [self setNoBusLabel:nil];
+    [dateFormatter release];
+    [timer invalidate];
+    [timer release];
     [super viewDidUnload];
 }
 @end
