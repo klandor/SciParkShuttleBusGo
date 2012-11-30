@@ -41,26 +41,15 @@ NSDateFormatter *dateFormatter;
 
 - (void)updateBus
 {
-    NSLog(@"updateBus fired");
-    //[self.loadingMark startAnimating];
-    
-    NSData *xmlData;
-    while (true) {
-        // online url: http://117.56.78.38/sipa/busAzimuth.xml
-        // testing url: https://dl.dropbox.com/u/169167/busAzimuth.xml
-        xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://117.56.78.38/sipa/busAzimuth.xml"]];
-        if(xmlData)
-        {
-            break;
-        }
-        NSLog(@"Fetching data failure, retry in 5 sec.");
-        [NSThread sleepForTimeInterval:5];
+    // online url: http://117.56.78.38/sipa/busAzimuth.xml
+    // testing url: https://dl.dropbox.com/u/169167/busAzimuth.xml
+    NSData *xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://117.56.78.38/sipa/busAzimuth.xml"]];
+    if(xmlData)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            [self updateBusMark:xmlData];
+        });
     }
-    
-    dispatch_async(dispatch_get_main_queue(), ^(){
-        [self updateBusMark:xmlData];
-    });
-    
 
 }
 
