@@ -65,35 +65,56 @@ NSDateFormatter *dateFormatter;
 }
 
 - (void)updateBusMark:(NSData*) xmlData{
-    //remove all anotation
-    [self removeAllBusMark];
-    
-    //
     NSError *error;
     GDataXMLDocument *xml = [[[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error] autorelease];
     NSArray *buses = [xml.rootElement children];
-    NSEnumerator *e = [buses objectEnumerator];
-    GDataXMLElement *bus;
+    //NSEnumerator *e = [buses objectEnumerator];
+    //GDataXMLElement *bus;
     BOOL noBus = YES;
-    while(bus = [e nextObject])
+    //while(bus = [e nextObject])
+    for (GDataXMLElement *bus in buses)
     {
-        if ([[[bus attributeForName:@"OnOff"].stringValue uppercaseString] isEqualToString:@"ON"])
+        if ([[bus attributeForName:@"ColorId"].stringValue intValue] == 0) {
+            // 403-BB not science park shuttle bus
+            continue;
+        }
+        if ([dateFormatter dateFromString:[bus attributeForName:@"Updatetime"].stringValue] == nil) {
+            // invalid data
+            continue;
+        }
+        
+        BOOL isOn = [[[bus attributeForName:@"OnOff"].stringValue uppercaseString] isEqualToString:@"ON"];
+        BusMarkAnnotation *busAnno = [self BusMarkAnnotationFromMapWithName: [bus attributeForName:@"LP"].stringValue];
+        BOOL inMap = (busAnno != nil);
+        if (inMap && [busAnno.updateTime isEqualToString:[bus attributeForName:@"Updatetime"].stringValue] == NO ) {
+            [map removeAnnotation:busAnno];
+            inMap = NO;
+        }
+        
+        if (isOn)
         {
             noBus = NO;
-            CLLocationCoordinate2D location;
-            location.latitude = [[bus attributeForName:@"Lat"].stringValue doubleValue];
-            location.longitude = [[bus attributeForName:@"Lng"].stringValue doubleValue];
+            if (!inMap)
+            {
+                CLLocationCoordinate2D location;
+                location.latitude = [[bus attributeForName:@"Lat"].stringValue doubleValue];
+                location.longitude = [[bus attributeForName:@"Lng"].stringValue doubleValue];
+                
+                busAnno =
+                    [[[BusMarkAnnotation alloc]
+                     initWithTitle:[NSString stringWithString:[bus attributeForName:@"LP"].stringValue]
+                     andSubtitle:[NSString stringWithFormat:@"%@ km/h", [bus attributeForName:@"Speed"].stringValue]
+                     andCoordinate:location] autorelease];
+                busAnno.direction = [[bus attributeForName:@"Azimuth"].stringValue doubleValue];
+                busAnno.colorCode = [[bus attributeForName:@"ColorId"].stringValue intValue];
+                busAnno.updateTime = [NSString stringWithString:[bus attributeForName:@"Updatetime"].stringValue];
             
-            BusMarkAnnotation *newAnnotation =
-                [[BusMarkAnnotation alloc]
-                 initWithTitle:[NSString stringWithString:[bus attributeForName:@"LP"].stringValue]
-                 andSubtitle:[NSString stringWithFormat:@"%@ km/h", [bus attributeForName:@"Speed"].stringValue]
-                 andCoordinate:location];
-            
-            newAnnotation.direction = [[bus attributeForName:@"Azimuth"].stringValue doubleValue];
-            newAnnotation.colorCode = [[bus attributeForName:@"ColorId"].stringValue intValue];
-            [self.map addAnnotation:newAnnotation];
-            [newAnnotation release];
+                [self.map addAnnotation:busAnno];
+            }
+        }
+        else if(inMap)
+        {
+            [map removeAnnotation:busAnno];
         }
     }
     
@@ -119,16 +140,18 @@ NSDateFormatter *dateFormatter;
     map.showsUserLocation = [[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUserLocation"];
 }
 
-- (void)removeAllBusMark
+- (BusMarkAnnotation*)BusMarkAnnotationFromMapWithName:(NSString*) name
 {
-    NSEnumerator *e = [map.annotations objectEnumerator];
-    id annotation;
-    while (annotation = [e nextObject]) {
+    for (id annotation in map.annotations) {
         if ([annotation isKindOfClass:[BusMarkAnnotation class]]) {
-            [map removeAnnotation:annotation];
+            BusMarkAnnotation *bus = annotation;
+            if ([bus.title isEqualToString:name]) {
+                return bus;
+            }
         }
     }
 
+    return nil;
 }
 
 - (void)setupTimer
@@ -203,6 +226,7 @@ NSDateFormatter *dateFormatter;
         MKAnnotationView *bus = [mapView dequeueReusableAnnotationViewWithIdentifier:annotation.title];
         if(bus == nil){
             bus = [[[BusMarkView alloc] initWithAnnotation:annotation reuseIdentifier:annotation.title] autorelease];
+            bus.canShowCallout = YES;
         }
         
         // pass information
