@@ -76,7 +76,7 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRi-ed-s3f">
                                 <items>
-                                    <barButtonItem title="Back" id="YzN-9B-aAO">
+                                    <barButtonItem title="關閉" id="YzN-9B-aAO">
                                         <connections>
                                             <action selector="back:" destination="4rR-B0-Gyh" id="0Em-Ir-ZDf"/>
                                         </connections>
