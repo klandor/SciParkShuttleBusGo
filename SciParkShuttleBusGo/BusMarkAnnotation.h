@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic) int colorCode;
 @property (nonatomic) float direction;
+@property (nonatomic, copy) NSString *updateTime;
 
 - (id)initWithTitle:(NSString *)title andSubtitle:(NSString *)subtitle  andCoordinate:(CLLocationCoordinate2D)c2d;
 - (void)passInfoToBus:(BusMarkView *) bus;

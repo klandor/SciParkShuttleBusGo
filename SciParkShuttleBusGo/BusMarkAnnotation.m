@@ -9,9 +9,9 @@
 #import "BusMarkAnnotation.h"
 
 @implementation BusMarkAnnotation
-@synthesize title, subtitle, coordinate, colorCode, direction;
+@synthesize title, subtitle, coordinate, colorCode, direction, updateTime;
 
-- (id)initWithTitle:(NSString *)ttl andSubtitle:(NSString *)sttl  andCoordinate:(CLLocationCoordinate2D)c2d; {
+- (id)initWithTitle:(NSString *)ttl andSubtitle:(NSString *)sttl  andCoordinate:(CLLocationCoordinate2D)c2d {
 	[super init];
 	title = ttl;
     [title retain];
@@ -29,6 +29,7 @@
 - (void)dealloc {
 	[title release];
     [subtitle release];
+    [updateTime release];
 	[super dealloc];
 }
 
