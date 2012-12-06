@@ -26,6 +26,11 @@
 		850FD3711657CCA50095DC7C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3701657CCA50095DC7C /* MapViewController.m */; };
 		850FD3751657D4F70095DC7C /* BusMarkAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3741657D4F70095DC7C /* BusMarkAnnotation.m */; };
 		850FD3781657D56E0095DC7C /* BusMarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FD3771657D56E0095DC7C /* BusMarkView.m */; };
+		851861F51668EC8200414775 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861F41668EC8200414775 /* Default@2x.png */; };
+		851861F81668ED5900414775 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861F71668ED5900414775 /* Default.png */; };
+		851861FA1668EEA100414775 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861F91668EEA100414775 /* Default-568h@2x.png */; };
+		851861FC1670DEDD00414775 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861FB1670DEDD00414775 /* icon.png */; };
+		851861FE1670DEE100414775 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861FD1670DEE100414775 /* icon@2x.png */; };
 		85440F251657E8B300256C6B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 85440F241657E8B300256C6B /* GDataXMLNode.m */; };
 		85A88ECA1664F84000BE5DCE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88EC91664F84000BE5DCE /* SettingViewController.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,11 @@
 		850FD3741657D4F70095DC7C /* BusMarkAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusMarkAnnotation.m; sourceTree = "<group>"; };
 		850FD3761657D56E0095DC7C /* BusMarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusMarkView.h; sourceTree = "<group>"; };
 		850FD3771657D56E0095DC7C /* BusMarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusMarkView.m; sourceTree = "<group>"; };
+		851861F41668EC8200414775 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		851861F71668ED5900414775 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		851861F91668EEA100414775 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		851861FB1670DEDD00414775 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		851861FD1670DEE100414775 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		85440F231657E8B300256C6B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		85440F241657E8B300256C6B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		85A88EC81664F84000BE5DCE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -103,6 +113,11 @@
 		850FD3271657CB250095DC7C = {
 			isa = PBXGroup;
 			children = (
+				851861FD1670DEE100414775 /* icon@2x.png */,
+				851861FB1670DEDD00414775 /* icon.png */,
+				851861F91668EEA100414775 /* Default-568h@2x.png */,
+				851861F71668ED5900414775 /* Default.png */,
+				851861F41668EC8200414775 /* Default@2x.png */,
 				850FD33C1657CB260095DC7C /* SciParkShuttleBusGo */,
 				850FD35A1657CB270095DC7C /* SciParkShuttleBusGoTests */,
 				850FD3351657CB260095DC7C /* Frameworks */,
@@ -278,6 +293,11 @@
 				850FD34B1657CB260095DC7C /* Default@2x.png in Resources */,
 				850FD34D1657CB260095DC7C /* Default-568h@2x.png in Resources */,
 				850FD36C1657CBCC0095DC7C /* Storyboard_iPhone.storyboard in Resources */,
+				851861F51668EC8200414775 /* Default@2x.png in Resources */,
+				851861F81668ED5900414775 /* Default.png in Resources */,
+				851861FA1668EEA100414775 /* Default-568h@2x.png in Resources */,
+				851861FC1670DEDD00414775 /* icon.png in Resources */,
+				851861FE1670DEE100414775 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
