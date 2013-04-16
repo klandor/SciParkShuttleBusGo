@@ -36,6 +36,19 @@
     
 }
 
+- (IBAction)tabUrl:(id)sender {
+    NSURL *chromeUrl = [NSURL URLWithString:@"googlechrome://117.56.78.38"];
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([app canOpenURL:chromeUrl])
+    {
+        [app openURL:chromeUrl];
+    }
+    else
+    {
+        [app openURL:[NSURL URLWithString:@"http://117.56.78.38"]];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

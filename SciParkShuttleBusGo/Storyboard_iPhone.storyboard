@@ -134,6 +134,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="tabUrl:" destination="4rR-B0-Gyh" eventType="touchUpInside" id="pxJ-hL-9fp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="箭頭圖示代表巡迴巴士的位置與方位" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZXb-Yp-dE8">
                                 <rect key="frame" x="20" y="156" width="272" height="21"/>
@@ -176,6 +179,7 @@
             <relationships>
                 <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="tabShowCurrentLocation:"/>
+                <relationship kind="action" name="tabUrl:"/>
                 <relationship kind="outlet" name="CurrentLocationSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
