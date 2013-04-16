@@ -92,7 +92,9 @@ NSDateFormatter *dateFormatter;
                 busAnno =
                     [[[BusMarkAnnotation alloc]
                      initWithTitle:[NSString stringWithString:[bus attributeForName:@"LP"].stringValue]
-                     andSubtitle:[NSString stringWithFormat:@"%@ km/h", [bus attributeForName:@"Speed"].stringValue]
+                     andSubtitle:[NSString stringWithFormat:@"%d km/h %@",
+                                  (int)[[bus attributeForName:@"Speed"].stringValue doubleValue],
+                                  [[[bus attributeForName:@"Updatetime"].stringValue componentsSeparatedByString:@" "] objectAtIndex:1]]
                      andCoordinate:location] autorelease];
                 busAnno.direction = [[bus attributeForName:@"Azimuth"].stringValue doubleValue];
                 busAnno.colorCode = [[bus attributeForName:@"ColorId"].stringValue intValue];
