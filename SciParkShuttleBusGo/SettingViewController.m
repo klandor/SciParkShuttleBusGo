@@ -14,7 +14,6 @@
 
 @implementation SettingViewController
 
-@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,10 +24,6 @@
     return self;
 }
 
-- (IBAction)back:(id)sender
-{
-    [delegate finishSettingView];
-}
 - (IBAction)tabShowCurrentLocation:(id)sender
 {
     UISwitch *sw = sender;
@@ -63,8 +58,6 @@
 
 - (void)dealloc
 {
-    delegate = nil;
-    
     [_CurrentLocationSwitch release];
     [super dealloc];
 }

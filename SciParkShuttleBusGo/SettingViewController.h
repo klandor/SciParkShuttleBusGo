@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SettingViewDelegate.h"
 
 @interface SettingViewController : UIViewController
-- (IBAction)back:(id)sender;
 - (IBAction)tabShowCurrentLocation:(id)sender;
 - (IBAction)tabUrl:(id)sender;
-@property (nonatomic, retain) id<SettingViewDelegate> delegate;
 @property (retain, nonatomic) IBOutlet UISwitch *CurrentLocationSwitch;
 @end

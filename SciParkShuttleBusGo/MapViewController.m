@@ -124,10 +124,9 @@ NSDateFormatter *dateFormatter;
     });
 
 }
-
--(void)finishSettingView
+-(void)viewWillAppear:(BOOL)animated
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [super viewWillAppear:animated];
     map.showsUserLocation = [[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUserLocation"];
 }
 
@@ -199,17 +198,6 @@ NSDateFormatter *dateFormatter;
           mapView.region.span.longitudeDelta);
     
 }
-
-- (IBAction)presentSettingView:(id)sender
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle:nil];
-    SettingViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SettingView"];
-    [vc setModalPresentationStyle:UIModalPresentationFullScreen];
-    vc.delegate = self;
-    
-    [self presentModalViewController:vc animated:YES];
-}
-
 
 - (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation: (id <MKAnnotation>) annotation
 {

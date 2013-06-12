@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dD7-7R-AE2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="idM-7W-ebf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map View Controller - 巴士位置-->
         <scene sceneID="NBu-b4-7Ac">
             <objects>
                 <viewController id="dD7-7R-AE2" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mnx-WA-mU1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="m0R-bs-vXB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="dD7-7R-AE2" id="fN3-rI-7ix"/>
@@ -31,24 +31,10 @@
                                 <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="sdasd" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="fq7-ST-xgd">
-                                <rect key="frame" x="282" y="509" width="18" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="presentSettingView:" destination="dD7-7R-AE2" eventType="touchUpInside" id="Zdp-lo-4NC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="巴士位置" id="Qrf-pt-r2s"/>
                     <connections>
                         <outlet property="loadingMark" destination="x0i-Tf-eoI" id="OXD-No-fcp"/>
                         <outlet property="map" destination="m0R-bs-vXB" id="jUt-pT-tz2"/>
@@ -57,27 +43,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swj-rk-ibN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="-19"/>
+            <point key="canvasLocation" x="449" y="-358"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="isj-ju-ZAB">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="idM-7W-ebf" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="7je-49-Rjr">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dD7-7R-AE2" kind="relationship" relationship="viewControllers" id="hkn-N8-6v1"/>
+                        <segue destination="4rR-B0-Gyh" kind="relationship" relationship="viewControllers" id="5np-HQ-x0L"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5K-Ez-dub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="45"/>
+        </scene>
+        <!--Setting View Controller - 設定-->
         <scene sceneID="YPz-q3-Sd8">
             <objects>
                 <viewController storyboardIdentifier="SettingView" id="4rR-B0-Gyh" customClass="SettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VMH-Aa-4Es">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nRi-ed-s3f">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <barButtonItem title="關閉" id="YzN-9B-aAO">
-                                        <connections>
-                                            <action selector="back:" destination="4rR-B0-Gyh" id="0Em-Ir-ZDf"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="5cJ-5S-t1T">
                                 <rect key="frame" x="223" y="62" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -86,7 +80,7 @@
                                 </connections>
                             </switch>
                             <view contentMode="scaleToFill" id="yn1-7F-WaB">
-                                <rect key="frame" x="0.0" y="429" width="320" height="119"/>
+                                <rect key="frame" x="0.0" y="380" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.84992825255102045" green="0.84992825255102045" blue="0.84992825255102045" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -105,21 +99,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="資料來源：新竹科學工業園區管理局" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BDG-u0-KC1">
-                                <rect key="frame" x="20" y="449" width="280" height="24"/>
+                                <rect key="frame" x="20" y="400" width="280" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="園區巴士GO 2012" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="We3-Hq-BFX">
-                                <rect key="frame" x="20" y="507" width="280" height="21"/>
+                                <rect key="frame" x="20" y="458" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.37310030106845887" green="0.38227142993993019" blue="0.43664301658163263" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="a3L-sD-zjD">
-                                <rect key="frame" x="97" y="470" width="170" height="29"/>
+                                <rect key="frame" x="97" y="421" width="170" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal">
@@ -155,13 +149,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.83811050189288128" green="0.91775615334242855" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="設定" id="3B6-lS-yuG"/>
                     <connections>
                         <outlet property="CurrentLocationSwitch" destination="5cJ-5S-t1T" id="f3g-sm-4Wg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR6-Cs-HTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="550" y="-19"/>
+            <point key="canvasLocation" x="449" y="341"/>
         </scene>
     </scenes>
     <classes>
