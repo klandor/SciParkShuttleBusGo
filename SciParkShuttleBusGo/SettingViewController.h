@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController
+@interface SettingViewController : UITableViewController <UITableViewDelegate>
 - (IBAction)tabShowCurrentLocation:(id)sender;
-- (IBAction)tabUrl:(id)sender;
 @property (retain, nonatomic) IBOutlet UISwitch *CurrentLocationSwitch;
 @end

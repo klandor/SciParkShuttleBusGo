@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 
+#define ShowUserLocationKey @"ShowUserLocation"
+
 @interface SettingViewController ()
 
 @end
@@ -27,11 +29,11 @@
 - (IBAction)tabShowCurrentLocation:(id)sender
 {
     UISwitch *sw = sender;
-    [[NSUserDefaults standardUserDefaults] setBool:sw.on forKey:@"ShowUserLocation"];
+    [[NSUserDefaults standardUserDefaults] setBool:sw.on forKey:ShowUserLocationKey];
     
 }
 
-- (IBAction)tabUrl:(id)sender {
+- (void)openOfficalWebSite {
     NSURL *chromeUrl = [NSURL URLWithString:@"googlechrome://117.56.78.38"];
     UIApplication *app = [UIApplication sharedApplication];
     if ([app canOpenURL:chromeUrl])
@@ -44,10 +46,46 @@
     }
 }
 
-- (void)viewDidLoad
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super viewDidLoad];
-    self.CurrentLocationSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUserLocation"];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.section) {
+        case 1: // 園區巴士資訊
+            switch (indexPath.row) {
+                case 0: // 路線圖
+                    
+                    break;
+                case 1: // 時刻表
+                    
+                    break;
+                case 2: // 即時交通網
+                    [self openOfficalWebSite];
+                    break;
+                    
+                default:
+                    break;
+            }
+            break;
+        case 2: // 支援
+            switch (indexPath.row) {
+                case 0: // GitHub
+                    
+                    break;
+                case 1: // feedback email
+                    break;
+                default:
+                    break;
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.CurrentLocationSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:ShowUserLocationKey];
 }
 
 - (void)didReceiveMemoryWarning
