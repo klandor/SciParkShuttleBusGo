@@ -67,11 +67,11 @@
 		850FD3741657D4F70095DC7C /* BusMarkAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusMarkAnnotation.m; sourceTree = "<group>"; };
 		850FD3761657D56E0095DC7C /* BusMarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusMarkView.h; sourceTree = "<group>"; };
 		850FD3771657D56E0095DC7C /* BusMarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusMarkView.m; sourceTree = "<group>"; };
-		851861F41668EC8200414775 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		851861F71668ED5900414775 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		851861F91668EEA100414775 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		851861FB1670DEDD00414775 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		851861FD1670DEE100414775 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		851861F41668EC8200414775 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		851861F71668ED5900414775 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		851861F91668EEA100414775 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		851861FB1670DEDD00414775 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		851861FD1670DEE100414775 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		85440F231657E8B300256C6B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		85440F241657E8B300256C6B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		85A88EC81664F84000BE5DCE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -106,11 +106,6 @@
 		850FD3271657CB250095DC7C = {
 			isa = PBXGroup;
 			children = (
-				851861FD1670DEE100414775 /* icon@2x.png */,
-				851861FB1670DEDD00414775 /* icon.png */,
-				851861F91668EEA100414775 /* Default-568h@2x.png */,
-				851861F71668ED5900414775 /* Default.png */,
-				851861F41668EC8200414775 /* Default@2x.png */,
 				850FD33C1657CB260095DC7C /* SciParkShuttleBusGo */,
 				850FD35A1657CB270095DC7C /* SciParkShuttleBusGoTests */,
 				850FD3351657CB260095DC7C /* Frameworks */,
@@ -155,6 +150,7 @@
 		850FD33D1657CB260095DC7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				858AB801176CB7C00081FB90 /* images */,
 				850FD33E1657CB260095DC7C /* SciParkShuttleBusGo-Info.plist */,
 				850FD33F1657CB260095DC7C /* InfoPlist.strings */,
 				850FD3421657CB260095DC7C /* main.m */,
@@ -204,6 +200,18 @@
 				85440F241657E8B300256C6B /* GDataXMLNode.m */,
 			);
 			name = XMLSupport;
+			sourceTree = "<group>";
+		};
+		858AB801176CB7C00081FB90 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				851861FD1670DEE100414775 /* icon@2x.png */,
+				851861FB1670DEDD00414775 /* icon.png */,
+				851861F91668EEA100414775 /* Default-568h@2x.png */,
+				851861F71668ED5900414775 /* Default.png */,
+				851861F41668EC8200414775 /* Default@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
