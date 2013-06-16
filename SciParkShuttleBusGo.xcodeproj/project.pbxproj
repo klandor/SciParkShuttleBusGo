@@ -29,6 +29,11 @@
 		851861FC1670DEDD00414775 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861FB1670DEDD00414775 /* icon.png */; };
 		851861FE1670DEE100414775 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861FD1670DEE100414775 /* icon@2x.png */; };
 		85440F251657E8B300256C6B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 85440F241657E8B300256C6B /* GDataXMLNode.m */; };
+		858AB810176D5B8E0081FB90 /* 1020617_all.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 858AB80B176D5B8E0081FB90 /* 1020617_all.pdf */; };
+		858AB811176D5B8E0081FB90 /* 1020102red.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 858AB80C176D5B8E0081FB90 /* 1020102red.pdf */; };
+		858AB812176D5B8E0081FB90 /* 1020102green.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 858AB80D176D5B8E0081FB90 /* 1020102green.pdf */; };
+		858AB813176D5B8E0081FB90 /* 1020617purple.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 858AB80E176D5B8E0081FB90 /* 1020617purple.pdf */; };
+		858AB814176D5B8E0081FB90 /* 1020102Orange.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 858AB80F176D5B8E0081FB90 /* 1020102Orange.pdf */; };
 		85A88ECA1664F84000BE5DCE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88EC91664F84000BE5DCE /* SettingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +79,11 @@
 		851861FD1670DEE100414775 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		85440F231657E8B300256C6B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		85440F241657E8B300256C6B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		858AB80B176D5B8E0081FB90 /* 1020617_all.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1020617_all.pdf; sourceTree = "<group>"; };
+		858AB80C176D5B8E0081FB90 /* 1020102red.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1020102red.pdf; sourceTree = "<group>"; };
+		858AB80D176D5B8E0081FB90 /* 1020102green.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1020102green.pdf; sourceTree = "<group>"; };
+		858AB80E176D5B8E0081FB90 /* 1020617purple.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1020617purple.pdf; sourceTree = "<group>"; };
+		858AB80F176D5B8E0081FB90 /* 1020102Orange.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1020102Orange.pdf; sourceTree = "<group>"; };
 		85A88EC81664F84000BE5DCE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		85A88EC91664F84000BE5DCE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +152,7 @@
 				850FD36B1657CBCC0095DC7C /* Storyboard_iPhone.storyboard */,
 				850FD33D1657CB260095DC7C /* Supporting Files */,
 				850FD3721657D4BB0095DC7C /* MapView */,
+				858AB802176D59F40081FB90 /* PDF */,
 				85440F211657E88100256C6B /* XMLSupport */,
 			);
 			path = SciParkShuttleBusGo;
@@ -212,6 +223,18 @@
 				851861F41668EC8200414775 /* Default@2x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		858AB802176D59F40081FB90 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				858AB80B176D5B8E0081FB90 /* 1020617_all.pdf */,
+				858AB80C176D5B8E0081FB90 /* 1020102red.pdf */,
+				858AB80D176D5B8E0081FB90 /* 1020102green.pdf */,
+				858AB80E176D5B8E0081FB90 /* 1020617purple.pdf */,
+				858AB80F176D5B8E0081FB90 /* 1020102Orange.pdf */,
+			);
+			name = PDF;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +315,11 @@
 				851861FA1668EEA100414775 /* Default-568h@2x.png in Resources */,
 				851861FC1670DEDD00414775 /* icon.png in Resources */,
 				851861FE1670DEE100414775 /* icon@2x.png in Resources */,
+				858AB810176D5B8E0081FB90 /* 1020617_all.pdf in Resources */,
+				858AB811176D5B8E0081FB90 /* 1020102red.pdf in Resources */,
+				858AB812176D5B8E0081FB90 /* 1020102green.pdf in Resources */,
+				858AB813176D5B8E0081FB90 /* 1020617purple.pdf in Resources */,
+				858AB814176D5B8E0081FB90 /* 1020102Orange.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
