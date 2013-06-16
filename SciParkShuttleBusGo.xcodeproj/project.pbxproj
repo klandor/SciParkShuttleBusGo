@@ -150,8 +150,9 @@
 				850FD3451657CB260095DC7C /* AppDelegate.h */,
 				850FD3461657CB260095DC7C /* AppDelegate.m */,
 				850FD36B1657CBCC0095DC7C /* Storyboard_iPhone.storyboard */,
-				850FD33D1657CB260095DC7C /* Supporting Files */,
 				850FD3721657D4BB0095DC7C /* MapView */,
+				858AB815176D92E70081FB90 /* SettingView */,
+				850FD33D1657CB260095DC7C /* Supporting Files */,
 				858AB802176D59F40081FB90 /* PDF */,
 				85440F211657E88100256C6B /* XMLSupport */,
 			);
@@ -198,8 +199,6 @@
 				850FD3741657D4F70095DC7C /* BusMarkAnnotation.m */,
 				850FD3761657D56E0095DC7C /* BusMarkView.h */,
 				850FD3771657D56E0095DC7C /* BusMarkView.m */,
-				85A88EC81664F84000BE5DCE /* SettingViewController.h */,
-				85A88EC91664F84000BE5DCE /* SettingViewController.m */,
 			);
 			name = MapView;
 			sourceTree = "<group>";
@@ -235,6 +234,15 @@
 				858AB80F176D5B8E0081FB90 /* 1020102Orange.pdf */,
 			);
 			name = PDF;
+			sourceTree = "<group>";
+		};
+		858AB815176D92E70081FB90 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				85A88EC81664F84000BE5DCE /* SettingViewController.h */,
+				85A88EC91664F84000BE5DCE /* SettingViewController.m */,
+			);
+			name = SettingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
