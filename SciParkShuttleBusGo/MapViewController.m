@@ -31,14 +31,6 @@ NSDateFormatter *dateFormatter;
     return self;
 }
 
-- (void)dealloc
-{
-    [map release];
-    [loadingMark release];
-    [noBusLabel release];
-    [super dealloc];
-}
-
 - (void)updateBus
 {
     // online url: http://117.56.78.38/sipa/busAzimuth.xml
@@ -55,7 +47,7 @@ NSDateFormatter *dateFormatter;
 
 - (void)updateBusMark:(NSData*) xmlData{
     NSError *error;
-    GDataXMLDocument *xml = [[[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error] autorelease];
+    GDataXMLDocument *xml = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
     NSArray *buses = [xml.rootElement children];
     //NSEnumerator *e = [buses objectEnumerator];
     //GDataXMLElement *bus;
@@ -90,12 +82,12 @@ NSDateFormatter *dateFormatter;
                 location.longitude = [[bus attributeForName:@"Lng"].stringValue doubleValue];
                 
                 busAnno =
-                    [[[BusMarkAnnotation alloc]
+                    [[BusMarkAnnotation alloc]
                      initWithTitle:[NSString stringWithString:[bus attributeForName:@"LP"].stringValue]
                      andSubtitle:[NSString stringWithFormat:@"%d km/h %@",
                                   (int)[[bus attributeForName:@"Speed"].stringValue doubleValue],
                                   [[[bus attributeForName:@"Updatetime"].stringValue componentsSeparatedByString:@" "] objectAtIndex:1]]
-                     andCoordinate:location] autorelease];
+                     andCoordinate:location] ;
                 busAnno.direction = [[bus attributeForName:@"Azimuth"].stringValue doubleValue];
                 busAnno.colorCode = [[bus attributeForName:@"ColorId"].stringValue intValue];
                 busAnno.updateTime = [NSString stringWithString:[bus attributeForName:@"Updatetime"].stringValue];
@@ -204,7 +196,7 @@ NSDateFormatter *dateFormatter;
     if ([annotation isKindOfClass:[BusMarkAnnotation class]]) {
         MKAnnotationView *bus = [mapView dequeueReusableAnnotationViewWithIdentifier:annotation.title];
         if(bus == nil){
-            bus = [[[BusMarkView alloc] initWithAnnotation:annotation reuseIdentifier:annotation.title] autorelease];
+            bus = [[BusMarkView alloc] initWithAnnotation:annotation reuseIdentifier:annotation.title];
             bus.canShowCallout = YES;
         }
         
@@ -232,9 +224,7 @@ NSDateFormatter *dateFormatter;
 - (void)viewDidUnload {
     [self setLoadingMark:nil];
     [self setNoBusLabel:nil];
-    [dateFormatter release];
     [timer invalidate];
-    [timer release];
     [super viewDidUnload];
 }
 @end

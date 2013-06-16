@@ -12,25 +12,18 @@
 @synthesize title, subtitle, coordinate, colorCode, direction, updateTime;
 
 - (id)initWithTitle:(NSString *)ttl andSubtitle:(NSString *)sttl  andCoordinate:(CLLocationCoordinate2D)c2d {
-	[super init];
-	title = ttl;
-    [title retain];
-    subtitle = sttl;
-    [subtitle retain];
-	coordinate = c2d;
+	self = [super init];
+    if(self){
+        title = ttl;
+        subtitle = sttl;
+        coordinate = c2d;
+    }
 	return self;
 }
 
 - (void)passInfoToBus:(BusMarkView *) bus{
     bus.direction = self.direction;
     bus.colorCode = self.colorCode;
-}
-
-- (void)dealloc {
-	[title release];
-    [subtitle release];
-    [updateTime release];
-	[super dealloc];
 }
 
 @end

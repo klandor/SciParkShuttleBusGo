@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "ZoomingPDFViewerViewController.h"
 
 #define ShowUserLocationKey @"ShowUserLocation"
 
@@ -53,7 +54,7 @@
         case 1: // 園區巴士資訊
             switch (indexPath.row) {
                 case 0: // 路線圖
-                    
+                    [self pushWebViewWithURL:[NSURL URLWithString:@"http://www.sipa.gov.tw/content/file/1020617_all.pdf"] andTitle:@"巡迴巴士路線圖"];
                     break;
                 case 1: // 時刻表
                     
@@ -82,6 +83,14 @@
     }
 }
 
+-(void)pushWebViewWithURL:(NSURL*) url andTitle:(NSString*) title
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle:nil];
+    ZoomingPDFViewerViewController *webView = [storyboard instantiateViewControllerWithIdentifier:@"ZoomingPDFViewer"];
+    webView.navigationItem.title = title;
+    [self.navigationController pushViewController:webView animated:YES];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -92,12 +101,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
-{
-    [_CurrentLocationSwitch release];
-    [super dealloc];
 }
 
 - (void)viewDidUnload {
