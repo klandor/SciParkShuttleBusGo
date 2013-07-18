@@ -91,6 +91,7 @@
                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/klandor/SciParkShuttleBusGo"]];
                     break;
                 case 1: // feedback email
+                    [self openEmailWriter];
                     break;
                 default:
                     break;
@@ -108,6 +109,36 @@
     webView.url = url;
     webView.navigationItem.title = title;
     [self.navigationController pushViewController:webView animated:YES];
+}
+
+-(void)openEmailWriter
+{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        mailer.mailComposeDelegate = self;
+        [mailer setSubject:@"園區巴士GO 意見回饋"];
+        NSArray *toRecipients = [NSArray arrayWithObjects:@"klandor+BusGo@gmail.com", nil];
+        [mailer setToRecipients:toRecipients];
+        NSString *emailBody = @"";
+        [mailer setMessageBody:emailBody isHTML:NO];
+        [self presentModalViewController:mailer animated:YES];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"尚未設定電子信箱"
+                                                        message:@"請設定電子信箱，或直接寄至 'klandor+BusGo@gmail.com'"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    // Remove the mail view
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -43,6 +43,7 @@
 		85FF7FB9179820BC00AE4F6F /* bus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FF7FB7179820BC00AE4F6F /* bus@2x.png */; };
 		85FF7FBC1798217D00AE4F6F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FF7FBA1798217D00AE4F6F /* settings.png */; };
 		85FF7FBD1798217D00AE4F6F /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FF7FBB1798217D00AE4F6F /* settings@2x.png */; };
+		85FF7FBF1798288A00AE4F6F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FF7FBE1798288A00AE4F6F /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		85FF7FB7179820BC00AE4F6F /* bus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus@2x.png"; sourceTree = "<group>"; };
 		85FF7FBA1798217D00AE4F6F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		85FF7FBB1798217D00AE4F6F /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		85FF7FBE1798288A00AE4F6F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FF7FBF1798288A00AE4F6F /* MessageUI.framework in Frameworks */,
 				850FD36E1657CC2B0095DC7C /* MapKit.framework in Frameworks */,
 				850FD3371657CB260095DC7C /* UIKit.framework in Frameworks */,
 				850FD3391657CB260095DC7C /* Foundation.framework in Frameworks */,
@@ -136,6 +139,7 @@
 		850FD3271657CB250095DC7C = {
 			isa = PBXGroup;
 			children = (
+				85FF7FBE1798288A00AE4F6F /* MessageUI.framework */,
 				852AA414176DE7FA000039FE /* QuartzCore.framework */,
 				850FD33C1657CB260095DC7C /* SciParkShuttleBusGo */,
 				850FD35A1657CB270095DC7C /* SciParkShuttleBusGoTests */,

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface SettingViewController : UITableViewController <UITableViewDelegate>
+@interface SettingViewController : UITableViewController <UITableViewDelegate, MFMailComposeViewControllerDelegate>
 - (IBAction)tabShowCurrentLocation:(id)sender;
 @property (retain, nonatomic) IBOutlet UISwitch *CurrentLocationSwitch;
 @end
