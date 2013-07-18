@@ -49,6 +49,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZoomingPDFViewerViewController : UIViewController
-
+@property (nonatomic, strong) NSURL *url;
 @end
 

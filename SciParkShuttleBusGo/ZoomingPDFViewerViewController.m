@@ -58,7 +58,7 @@
     /*
      Open the PDF document, extract the first page, and pass the page to the PDF scroll view.
      */
-    NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"1020617_all" withExtension:@"pdf"];
+    NSURL *pdfURL = self.url;
     
     CGPDFDocumentRef PDFDocument = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfURL);
     

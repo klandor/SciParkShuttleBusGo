@@ -39,6 +39,10 @@
 		858AB821176DC1800081FB90 /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 858AB81C176DC1800081FB90 /* TiledPDFView.m */; };
 		858AB822176DC1800081FB90 /* ZoomingPDFViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858AB81E176DC1800081FB90 /* ZoomingPDFViewerViewController.m */; };
 		85A88ECA1664F84000BE5DCE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88EC91664F84000BE5DCE /* SettingViewController.m */; };
+		85FF7FB8179820BC00AE4F6F /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FF7FB6179820BC00AE4F6F /* bus.png */; };
+		85FF7FB9179820BC00AE4F6F /* bus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FF7FB7179820BC00AE4F6F /* bus@2x.png */; };
+		85FF7FBC1798217D00AE4F6F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FF7FBA1798217D00AE4F6F /* settings.png */; };
+		85FF7FBD1798217D00AE4F6F /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FF7FBB1798217D00AE4F6F /* settings@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		858AB81F176DC1800081FB90 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
 		85A88EC81664F84000BE5DCE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		85A88EC91664F84000BE5DCE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		85FF7FB6179820BC00AE4F6F /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
+		85FF7FB7179820BC00AE4F6F /* bus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus@2x.png"; sourceTree = "<group>"; };
+		85FF7FBA1798217D00AE4F6F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		85FF7FBB1798217D00AE4F6F /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +236,10 @@
 		858AB801176CB7C00081FB90 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				85FF7FBA1798217D00AE4F6F /* settings.png */,
+				85FF7FBB1798217D00AE4F6F /* settings@2x.png */,
+				85FF7FB6179820BC00AE4F6F /* bus.png */,
+				85FF7FB7179820BC00AE4F6F /* bus@2x.png */,
 				851861FD1670DEE100414775 /* icon@2x.png */,
 				851861FB1670DEDD00414775 /* icon.png */,
 				851861F91668EEA100414775 /* Default-568h@2x.png */,
@@ -355,6 +367,10 @@
 				858AB812176D5B8E0081FB90 /* 1020102green.pdf in Resources */,
 				858AB813176D5B8E0081FB90 /* 1020617purple.pdf in Resources */,
 				858AB814176D5B8E0081FB90 /* 1020102Orange.pdf in Resources */,
+				85FF7FB8179820BC00AE4F6F /* bus.png in Resources */,
+				85FF7FB9179820BC00AE4F6F /* bus@2x.png in Resources */,
+				85FF7FBC1798217D00AE4F6F /* settings.png in Resources */,
+				85FF7FBD1798217D00AE4F6F /* settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
