@@ -54,7 +54,7 @@
         case 1: // 園區巴士資訊
             switch (indexPath.row) {
                 case 0: // 時刻表
-                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1020617_all" withExtension:@"pdf"] andTitle:@"巡迴巴士時刻表"];
+                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1030301_all" withExtension:@"pdf"] andTitle:@"巡迴巴士時刻表"];
                     break;
                 case 1: // 即時交通網
                     [self openOfficalWebSite];
@@ -68,16 +68,16 @@
             
             switch (indexPath.row) {
                 case 0: // 紅線
-                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1020102red" withExtension:@"pdf"] andTitle:@"紅線 路線圖"];
+                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1030201_red" withExtension:@"pdf"] andTitle:@"紅線 路線圖"];
                     break;
                 case 1: // 綠線
-                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1020102green" withExtension:@"pdf"] andTitle:@"綠線 路線圖"];
+                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1030201_green" withExtension:@"pdf"] andTitle:@"綠線 路線圖"];
                     break;
                 case 2: // 紫線
-                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1020617purple" withExtension:@"pdf"] andTitle:@"紫線 路線圖"];
+                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1030201_purple" withExtension:@"pdf"] andTitle:@"紫線 路線圖"];
                     break;
                 case 3: // 橘線
-                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1020102Orange" withExtension:@"pdf"] andTitle:@"橘線 路線圖"];
+                    [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1030201_Orange" withExtension:@"pdf"] andTitle:@"橘線 路線圖"];
                     break;
                     
                 default:
