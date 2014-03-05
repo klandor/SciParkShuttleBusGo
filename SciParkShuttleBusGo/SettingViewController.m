@@ -122,7 +122,7 @@
         [mailer setToRecipients:toRecipients];
         NSString *emailBody = @"";
         [mailer setMessageBody:emailBody isHTML:NO];
-        [self presentModalViewController:mailer animated:YES];
+        [self presentViewController:mailer animated:YES completion:nil];
     }
     else
     {
@@ -138,7 +138,7 @@
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
     // Remove the mail view
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
