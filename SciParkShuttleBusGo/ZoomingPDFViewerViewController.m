@@ -66,6 +66,11 @@
     [(PDFScrollView *)self.view setPDFPage:PDFPage];
 
     CGPDFDocumentRelease(PDFDocument);
+    
+    if([self respondsToSelector:@selector(edgesForExtendedLayout)])
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
 
 
