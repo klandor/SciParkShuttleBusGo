@@ -353,6 +353,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = klandor;
+				TargetAttributes = {
+					850FD3311657CB260095DC7C = {
+						DevelopmentTeam = CSA2U5KAPZ;
+					};
+				};
 			};
 			buildConfigurationList = 850FD32C1657CB250095DC7C /* Build configuration list for PBXProject "SciParkShuttleBusGo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -542,6 +547,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -549,6 +556,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -558,6 +566,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -565,6 +575,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
