@@ -35,6 +35,7 @@
 		858AB822176DC1800081FB90 /* ZoomingPDFViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858AB81E176DC1800081FB90 /* ZoomingPDFViewerViewController.m */; };
 		85A88ECA1664F84000BE5DCE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88EC91664F84000BE5DCE /* SettingViewController.m */; };
 		85ADE1CC18C76B94000D6BD8 /* Launch7-586h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85ADE1CB18C76B94000D6BD8 /* Launch7-586h@2x.png */; };
+		85D9D9D61940A56F00A8B19C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D9D9D51940A56F00A8B19C /* WebViewController.swift */; };
 		85E68BAF18C60E6500C4B1EB /* 1030201_Orange.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 85E68BAA18C60E6500C4B1EB /* 1030201_Orange.pdf */; };
 		85E68BB018C60E6500C4B1EB /* 1030201_purple.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 85E68BAB18C60E6500C4B1EB /* 1030201_purple.pdf */; };
 		85E68BB118C60E6500C4B1EB /* 1030201_green.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 85E68BAC18C60E6500C4B1EB /* 1030201_green.pdf */; };
@@ -104,6 +105,8 @@
 		85A88EC81664F84000BE5DCE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		85A88EC91664F84000BE5DCE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		85ADE1CB18C76B94000D6BD8 /* Launch7-586h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch7-586h@2x.png"; sourceTree = "<group>"; };
+		85D9D9D41940A56F00A8B19C /* SciParkShuttleBusGo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SciParkShuttleBusGo-Bridging-Header.h"; sourceTree = "<group>"; };
+		85D9D9D51940A56F00A8B19C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		85E68BAA18C60E6500C4B1EB /* 1030201_Orange.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1030201_Orange.pdf; sourceTree = "<group>"; };
 		85E68BAB18C60E6500C4B1EB /* 1030201_purple.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1030201_purple.pdf; sourceTree = "<group>"; };
 		85E68BAC18C60E6500C4B1EB /* 1030201_green.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1030201_green.pdf; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 				858AB819176DC1160081FB90 /* ZoomingPDFViewer */,
 				85A88EC81664F84000BE5DCE /* SettingViewController.h */,
 				85A88EC91664F84000BE5DCE /* SettingViewController.m */,
+				85D9D9D51940A56F00A8B19C /* WebViewController.swift */,
+				85D9D9D41940A56F00A8B19C /* SciParkShuttleBusGo-Bridging-Header.h */,
 			);
 			name = SettingView;
 			sourceTree = "<group>";
@@ -343,7 +348,7 @@
 			name = SciParkShuttleBusGoTests;
 			productName = SciParkShuttleBusGoTests;
 			productReference = 850FD3531657CB270095DC7C /* SciParkShuttleBusGoTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -439,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				850FD3431657CB260095DC7C /* main.m in Sources */,
+				85D9D9D61940A56F00A8B19C /* WebViewController.swift in Sources */,
 				850FD3471657CB260095DC7C /* AppDelegate.m in Sources */,
 				850FD3711657CCA50095DC7C /* MapViewController.m in Sources */,
 				850FD3751657D4F70095DC7C /* BusMarkAnnotation.m in Sources */,
@@ -546,6 +552,7 @@
 		850FD3661657CB270095DC7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -554,9 +561,12 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "SciParkShuttleBusGo/SciParkShuttleBusGo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -565,17 +575,20 @@
 		850FD3671657CB270095DC7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "SciParkShuttleBusGo/SciParkShuttleBusGo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SciParkShuttleBusGo/SciParkShuttleBusGo-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

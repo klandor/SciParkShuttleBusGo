@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "ZoomingPDFViewerViewController.h"
+#import "SciParkShuttleBusGo-Swift.h"
 
 #define ShowUserLocationKey @"ShowUserLocation"
 
@@ -55,6 +56,7 @@
             switch (indexPath.row) {
                 case 0: // 時刻表
                     [self pushWebViewWithURL:[[NSBundle mainBundle] URLForResource:@"1030301_all" withExtension:@"pdf"] andTitle:@"巡迴巴士時刻表"];
+                    //[self pushWebViewWithURL:[NSURL URLWithString:@"https://www.cgmh.org.tw/cgmh/medicine/medic_data/A1304001.doc"] andTitle:@"巡迴巴士時刻表"];
                     break;
                 case 1: // 即時交通網
                     [self openOfficalWebSite];
@@ -105,7 +107,7 @@
 -(void)pushWebViewWithURL:(NSURL*) url andTitle:(NSString*) title
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle:nil];
-    ZoomingPDFViewerViewController *webView = [storyboard instantiateViewControllerWithIdentifier:@"ZoomingPDFViewer"];
+    WebViewController *webView = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
     webView.url = url;
     webView.navigationItem.title = title;
     [self.navigationController pushViewController:webView animated:YES];
@@ -150,7 +152,13 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
+    NSLog(@"SettingView didReceiveMemoryWarning");
+    
     // Dispose of any resources that can be recreated.
+    if ([self isViewLoaded] && self.view.window == nil) {
+        self.view = nil;
+    }
 }
 
 - (void)viewDidUnload {
