@@ -7,7 +7,6 @@
 //
 
 #import "SettingViewController.h"
-#import "ZoomingPDFViewerViewController.h"
 #import "SciParkShuttleBusGo-Swift.h"
 
 #define ShowUserLocationKey @"ShowUserLocation"

@@ -292,39 +292,12 @@
                     <view key="view" contentMode="scaleToFill" id="POr-xw-QVv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="hil-TI-oVJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="JEx-lb-Mqk" id="euw-0S-Ien"/>
-                                </connections>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="webView" destination="hil-TI-oVJ" id="91I-BC-xTv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKR-w0-LJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925" y="-353"/>
-        </scene>
-        <!--ZoomingPDF Viewer View Controller-->
-        <scene sceneID="JdB-uJ-toe">
-            <objects>
-                <viewController storyboardIdentifier="ZoomingPDFViewer" id="ZdM-MV-eAN" customClass="ZoomingPDFViewerViewController" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.25" maximumZoomScale="5" id="8Yu-UF-E86" customClass="PDFScrollView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                    </scrollView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V95-h5-OxD" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1326" y="-353"/>
         </scene>
     </scenes>
     <resources>
