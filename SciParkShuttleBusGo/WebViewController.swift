@@ -11,10 +11,13 @@ import WebKit
 
 @objc
 class WebViewController: UIViewController {
-    var webView : WKWebView?
     var url: NSURL? {
         willSet{
         }
+    }
+    
+    convenience init(){
+        self.init(coder: nil)
     }
     
     init(coder decoder: NSCoder!){
@@ -22,17 +25,43 @@ class WebViewController: UIViewController {
         //automaticallyAdjustsScrollViewInsets = false
     }
     
+    override func loadView() {
+
+        if usingWebKit() {
+            self.view = WKWebView()
+        }
+        else {
+            self.view = UIWebView()
+        }
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         if let view = self.view{
-            webView = WKWebView(frame:view.frame)
-            view.addSubview(webView)
-            webView!.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-            
-            webView!.loadRequest(NSURLRequest(URL:url))
+            if usingWebKit() {
+                var webView = view as WKWebView
+                
+                webView.loadRequest(NSURLRequest(URL:url))
+            }
+            else {
+                var webView = view as UIWebView           
+                
+                webView.loadRequest(NSURLRequest(URL:url))
+            }
         }
+    }
+    
+    func usingWebKit() -> Bool{
+        if let systemVersion = UIDevice.currentDevice()!.systemVersion {
+            let version = systemVersion.componentsSeparatedByString(".")[0] as String
+            let versionInt = version.toInt()
+            
+            return versionInt >= 8
+        }
+        
+        return false;
     }
 
     override func didReceiveMemoryWarning() {

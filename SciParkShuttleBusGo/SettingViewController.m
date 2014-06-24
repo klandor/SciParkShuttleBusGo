@@ -105,8 +105,7 @@
 
 -(void)pushWebViewWithURL:(NSURL*) url andTitle:(NSString*) title
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle:nil];
-    WebViewController *webView = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    WebViewController *webView = [[WebViewController alloc] init];
     webView.url = url;
     webView.navigationItem.title = title;
     [self.navigationController pushViewController:webView animated:YES];

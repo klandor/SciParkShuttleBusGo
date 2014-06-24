@@ -103,7 +103,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="JTs-ug-wBs">
-                                                    <rect key="frame" x="250" y="4" width="52" height="32"/>
+                                                    <rect key="frame" x="250" y="3" width="52" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="-2" maxX="0.0" maxY="2"/>
                                                     <connections>
@@ -284,20 +284,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hs1-I6-jUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="886" y="358"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="qVg-QF-fEP">
-            <objects>
-                <viewController storyboardIdentifier="WebViewController" id="JEx-lb-Mqk" customClass="WebViewController" customModule="SciParkShuttleBusGo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="POr-xw-QVv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RKR-w0-LJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="925" y="-353"/>
         </scene>
     </scenes>
     <resources>
