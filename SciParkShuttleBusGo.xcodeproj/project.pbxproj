@@ -29,7 +29,7 @@
 		851861FC1670DEDD00414775 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861FB1670DEDD00414775 /* icon.png */; };
 		851861FE1670DEE100414775 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 851861FD1670DEE100414775 /* icon@2x.png */; };
 		85440F251657E8B300256C6B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 85440F241657E8B300256C6B /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		85967918195521A7004ED647 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85967917195521A7004ED647 /* WebKit.framework */; };
+		85967918195521A7004ED647 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85967917195521A7004ED647 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		85A88ECA1664F84000BE5DCE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88EC91664F84000BE5DCE /* SettingViewController.m */; };
 		85ADE1CC18C76B94000D6BD8 /* Launch7-586h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85ADE1CB18C76B94000D6BD8 /* Launch7-586h@2x.png */; };
 		85D9D9D61940A56F00A8B19C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D9D9D51940A56F00A8B19C /* WebViewController.swift */; };
